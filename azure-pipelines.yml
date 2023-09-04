@@ -1,0 +1,23 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- none  # Puedes definir desencadenantes aquí según tus necesidades
+
+pr: none  # No se ejecutará para solicitudes de extracción
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: |
+    git init
+    git add .
+    git commit -m "Initial commit"
+    git branch -M main
+    git remote add origin https://github.com/tu-usuario/tu-repositorio.git
+    git push -u origin main
+  displayName: 'Crear Repositorio en GitHub'
+
