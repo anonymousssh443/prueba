@@ -17,7 +17,7 @@ steps:
     git add .
     git commit -m "Initial commit"
     git branch -M main
-    git remote add origin https://github.com/tu-usuario/tu-repositorio.git
+    git remote add origin https://github.com/anonymousssh443/pruebajarvis.git
     git push -u origin main
   displayName: 'Crear Repositorio en GitHub'
 
