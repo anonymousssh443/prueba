@@ -4,9 +4,9 @@
 # https://aka.ms/yaml
 
 trigger:
-- none  # Puedes definir desencadenantes aquí según tus necesidades
+- none
 
-pr: none  # No se ejecutará para solicitudes de extracción
+pr: none
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -18,10 +18,8 @@ jobs:
   - script: |
       git config --local user.email "anonymousssh443@gmail.com"
       git config --local user.name "anonymousssh443"
-      git init
-      git add .
-      git commit -m "Initial commit"
-      git branch -M main
+      git checkout -b main  # Crear y cambiar a la rama "main" si no existe
+      git status  # Para verificar el estado actual del repositorio
       git remote add origin https://github.com/anonymousssh443/pruebajarvis.git
       git push -u origin main
     displayName: 'Configurar Git y Crear Repositorio en GitHub'
